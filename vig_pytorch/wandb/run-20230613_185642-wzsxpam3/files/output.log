@@ -1,0 +1,548 @@
+Training with a single process on 1 GPUs.
+Model sp_vig created, param count: 5782004
+Data processing configuration for current model + dataset:
+	input_size: (3, 224, 224)
+	interpolation: bicubic
+	mean: (0.485, 0.456, 0.406)
+	std: (0.229, 0.224, 0.225)
+	crop_pct: 0.875
+	crop_mode: center
+dpr [0.0, 0.00909090880304575, 0.0181818176060915, 0.027272727340459824, 0.036363635212183, 0.045454543083906174, 0.054545458406209946, 0.06363636255264282, 0.0727272778749466, 0.08181818574666977, 0.09090909361839294, 0.10000000149011612]
+num_knn [9, 9, 10, 11, 12, 13, 13, 14, 15, 16, 17, 18]
+modDeepGCN(
+  (conv_model): Sequential(
+    (0): Conv2d(3, 12, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): BatchNorm2d(12, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): Conv2d(12, 24, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (3): BatchNorm2d(24, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (4): ReLU(inplace=True)
+    (5): Conv2d(24, 24, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (6): BatchNorm2d(24, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (7): ReLU(inplace=True)
+  )
+  (gnn_feature_module): Sequential(
+    (0): GCNConv(24, 24)
+    (1): BatchNorm(24)
+    (2): ReLU(inplace=True)
+    (3): GCNConv(24, 48)
+    (4): BatchNorm(48)
+    (5): ReLU(inplace=True)
+    (6): GCNConv(48, 96)
+    (7): BatchNorm(96)
+    (8): ReLU(inplace=True)
+    (9): GCNConv(96, 192)
+    (10): BatchNorm(192)
+    (11): ReLU(inplace=True)
+    (12): GCNConv(192, 192)
+    (13): BatchNorm(192)
+    (14): MeanAggregation()
+  )
+  (padding_reshape_layer): padding_reshape_layer()
+  (backbone): Sequential(
+    (0): Sequential(
+      (0): Grapher(
+        (fc1): Sequential(
+          (0): Conv2d(192, 192, kernel_size=(1, 1), stride=(1, 1))
+          (1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (graph_conv): DyGraphConv2d(
+          (gconv): MRConv2d(
+            (nn): BasicConv(
+              (0): Conv2d(384, 384, kernel_size=(1, 1), stride=(1, 1), groups=4)
+              (1): BatchNorm2d(384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): GELU(approximate='none')
+            )
+          )
+          (dilated_knn_graph): DenseDilatedKnnGraph(
+            (_dilated): DenseDilated()
+          )
+        )
+        (fc2): Sequential(
+          (0): Conv2d(384, 192, kernel_size=(1, 1), stride=(1, 1))
+          (1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (drop_path): Identity()
+      )
+      (1): FFN(
+        (fc1): Sequential(
+          (0): Conv2d(192, 768, kernel_size=(1, 1), stride=(1, 1))
+          (1): BatchNorm2d(768, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (act): GELU(approximate='none')
+        (fc2): Sequential(
+          (0): Conv2d(768, 192, kernel_size=(1, 1), stride=(1, 1))
+          (1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (drop_path): Identity()
+      )
+    )
+    (1): Sequential(
+      (0): Grapher(
+        (fc1): Sequential(
+          (0): Conv2d(192, 192, kernel_size=(1, 1), stride=(1, 1))
+          (1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (graph_conv): DyGraphConv2d(
+          (gconv): MRConv2d(
+            (nn): BasicConv(
+              (0): Conv2d(384, 384, kernel_size=(1, 1), stride=(1, 1), groups=4)
+              (1): BatchNorm2d(384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): GELU(approximate='none')
+            )
+          )
+          (dilated_knn_graph): DenseDilatedKnnGraph(
+            (_dilated): DenseDilated()
+          )
+        )
+        (fc2): Sequential(
+          (0): Conv2d(384, 192, kernel_size=(1, 1), stride=(1, 1))
+          (1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (drop_path): DropPath(drop_prob=0.009)
+      )
+      (1): FFN(
+        (fc1): Sequential(
+          (0): Conv2d(192, 768, kernel_size=(1, 1), stride=(1, 1))
+          (1): BatchNorm2d(768, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (act): GELU(approximate='none')
+        (fc2): Sequential(
+          (0): Conv2d(768, 192, kernel_size=(1, 1), stride=(1, 1))
+          (1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (drop_path): DropPath(drop_prob=0.009)
+      )
+    )
+    (2): Sequential(
+      (0): Grapher(
+        (fc1): Sequential(
+          (0): Conv2d(192, 192, kernel_size=(1, 1), stride=(1, 1))
+          (1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (graph_conv): DyGraphConv2d(
+          (gconv): MRConv2d(
+            (nn): BasicConv(
+              (0): Conv2d(384, 384, kernel_size=(1, 1), stride=(1, 1), groups=4)
+              (1): BatchNorm2d(384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): GELU(approximate='none')
+            )
+          )
+          (dilated_knn_graph): DenseDilatedKnnGraph(
+            (_dilated): DenseDilated()
+          )
+        )
+        (fc2): Sequential(
+          (0): Conv2d(384, 192, kernel_size=(1, 1), stride=(1, 1))
+          (1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (drop_path): DropPath(drop_prob=0.018)
+      )
+      (1): FFN(
+        (fc1): Sequential(
+          (0): Conv2d(192, 768, kernel_size=(1, 1), stride=(1, 1))
+          (1): BatchNorm2d(768, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (act): GELU(approximate='none')
+        (fc2): Sequential(
+          (0): Conv2d(768, 192, kernel_size=(1, 1), stride=(1, 1))
+          (1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (drop_path): DropPath(drop_prob=0.018)
+      )
+    )
+    (3): Sequential(
+      (0): Grapher(
+        (fc1): Sequential(
+          (0): Conv2d(192, 192, kernel_size=(1, 1), stride=(1, 1))
+          (1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (graph_conv): DyGraphConv2d(
+          (gconv): MRConv2d(
+            (nn): BasicConv(
+              (0): Conv2d(384, 384, kernel_size=(1, 1), stride=(1, 1), groups=4)
+              (1): BatchNorm2d(384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): GELU(approximate='none')
+            )
+          )
+          (dilated_knn_graph): DenseDilatedKnnGraph(
+            (_dilated): DenseDilated()
+          )
+        )
+        (fc2): Sequential(
+          (0): Conv2d(384, 192, kernel_size=(1, 1), stride=(1, 1))
+          (1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (drop_path): DropPath(drop_prob=0.027)
+      )
+      (1): FFN(
+        (fc1): Sequential(
+          (0): Conv2d(192, 768, kernel_size=(1, 1), stride=(1, 1))
+          (1): BatchNorm2d(768, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (act): GELU(approximate='none')
+        (fc2): Sequential(
+          (0): Conv2d(768, 192, kernel_size=(1, 1), stride=(1, 1))
+          (1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (drop_path): DropPath(drop_prob=0.027)
+      )
+    )
+    (4): Sequential(
+      (0): Grapher(
+        (fc1): Sequential(
+          (0): Conv2d(192, 192, kernel_size=(1, 1), stride=(1, 1))
+          (1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (graph_conv): DyGraphConv2d(
+          (gconv): MRConv2d(
+            (nn): BasicConv(
+              (0): Conv2d(384, 384, kernel_size=(1, 1), stride=(1, 1), groups=4)
+              (1): BatchNorm2d(384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): GELU(approximate='none')
+            )
+          )
+          (dilated_knn_graph): DenseDilatedKnnGraph(
+            (_dilated): DenseDilated()
+          )
+        )
+        (fc2): Sequential(
+          (0): Conv2d(384, 192, kernel_size=(1, 1), stride=(1, 1))
+          (1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (drop_path): DropPath(drop_prob=0.036)
+      )
+      (1): FFN(
+        (fc1): Sequential(
+          (0): Conv2d(192, 768, kernel_size=(1, 1), stride=(1, 1))
+          (1): BatchNorm2d(768, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (act): GELU(approximate='none')
+        (fc2): Sequential(
+          (0): Conv2d(768, 192, kernel_size=(1, 1), stride=(1, 1))
+          (1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (drop_path): DropPath(drop_prob=0.036)
+      )
+    )
+    (5): Sequential(
+      (0): Grapher(
+        (fc1): Sequential(
+          (0): Conv2d(192, 192, kernel_size=(1, 1), stride=(1, 1))
+          (1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (graph_conv): DyGraphConv2d(
+          (gconv): MRConv2d(
+            (nn): BasicConv(
+              (0): Conv2d(384, 384, kernel_size=(1, 1), stride=(1, 1), groups=4)
+              (1): BatchNorm2d(384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): GELU(approximate='none')
+            )
+          )
+          (dilated_knn_graph): DenseDilatedKnnGraph(
+            (_dilated): DenseDilated()
+          )
+        )
+        (fc2): Sequential(
+          (0): Conv2d(384, 192, kernel_size=(1, 1), stride=(1, 1))
+          (1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (drop_path): DropPath(drop_prob=0.045)
+      )
+      (1): FFN(
+        (fc1): Sequential(
+          (0): Conv2d(192, 768, kernel_size=(1, 1), stride=(1, 1))
+          (1): BatchNorm2d(768, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (act): GELU(approximate='none')
+        (fc2): Sequential(
+          (0): Conv2d(768, 192, kernel_size=(1, 1), stride=(1, 1))
+          (1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (drop_path): DropPath(drop_prob=0.045)
+      )
+    )
+    (6): Sequential(
+      (0): Grapher(
+        (fc1): Sequential(
+          (0): Conv2d(192, 192, kernel_size=(1, 1), stride=(1, 1))
+          (1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (graph_conv): DyGraphConv2d(
+          (gconv): MRConv2d(
+            (nn): BasicConv(
+              (0): Conv2d(384, 384, kernel_size=(1, 1), stride=(1, 1), groups=4)
+              (1): BatchNorm2d(384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): GELU(approximate='none')
+            )
+          )
+          (dilated_knn_graph): DenseDilatedKnnGraph(
+            (_dilated): DenseDilated()
+          )
+        )
+        (fc2): Sequential(
+          (0): Conv2d(384, 192, kernel_size=(1, 1), stride=(1, 1))
+          (1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (drop_path): DropPath(drop_prob=0.055)
+      )
+      (1): FFN(
+        (fc1): Sequential(
+          (0): Conv2d(192, 768, kernel_size=(1, 1), stride=(1, 1))
+          (1): BatchNorm2d(768, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (act): GELU(approximate='none')
+        (fc2): Sequential(
+          (0): Conv2d(768, 192, kernel_size=(1, 1), stride=(1, 1))
+          (1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (drop_path): DropPath(drop_prob=0.055)
+      )
+    )
+    (7): Sequential(
+      (0): Grapher(
+        (fc1): Sequential(
+          (0): Conv2d(192, 192, kernel_size=(1, 1), stride=(1, 1))
+          (1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (graph_conv): DyGraphConv2d(
+          (gconv): MRConv2d(
+            (nn): BasicConv(
+              (0): Conv2d(384, 384, kernel_size=(1, 1), stride=(1, 1), groups=4)
+              (1): BatchNorm2d(384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): GELU(approximate='none')
+            )
+          )
+          (dilated_knn_graph): DenseDilatedKnnGraph(
+            (_dilated): DenseDilated()
+          )
+        )
+        (fc2): Sequential(
+          (0): Conv2d(384, 192, kernel_size=(1, 1), stride=(1, 1))
+          (1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (drop_path): DropPath(drop_prob=0.064)
+      )
+      (1): FFN(
+        (fc1): Sequential(
+          (0): Conv2d(192, 768, kernel_size=(1, 1), stride=(1, 1))
+          (1): BatchNorm2d(768, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (act): GELU(approximate='none')
+        (fc2): Sequential(
+          (0): Conv2d(768, 192, kernel_size=(1, 1), stride=(1, 1))
+          (1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (drop_path): DropPath(drop_prob=0.064)
+      )
+    )
+    (8): Sequential(
+      (0): Grapher(
+        (fc1): Sequential(
+          (0): Conv2d(192, 192, kernel_size=(1, 1), stride=(1, 1))
+          (1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (graph_conv): DyGraphConv2d(
+          (gconv): MRConv2d(
+            (nn): BasicConv(
+              (0): Conv2d(384, 384, kernel_size=(1, 1), stride=(1, 1), groups=4)
+              (1): BatchNorm2d(384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): GELU(approximate='none')
+            )
+          )
+          (dilated_knn_graph): DenseDilatedKnnGraph(
+            (_dilated): DenseDilated()
+          )
+        )
+        (fc2): Sequential(
+          (0): Conv2d(384, 192, kernel_size=(1, 1), stride=(1, 1))
+          (1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (drop_path): DropPath(drop_prob=0.073)
+      )
+      (1): FFN(
+        (fc1): Sequential(
+          (0): Conv2d(192, 768, kernel_size=(1, 1), stride=(1, 1))
+          (1): BatchNorm2d(768, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (act): GELU(approximate='none')
+        (fc2): Sequential(
+          (0): Conv2d(768, 192, kernel_size=(1, 1), stride=(1, 1))
+          (1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (drop_path): DropPath(drop_prob=0.073)
+      )
+    )
+    (9): Sequential(
+      (0): Grapher(
+        (fc1): Sequential(
+          (0): Conv2d(192, 192, kernel_size=(1, 1), stride=(1, 1))
+          (1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (graph_conv): DyGraphConv2d(
+          (gconv): MRConv2d(
+            (nn): BasicConv(
+              (0): Conv2d(384, 384, kernel_size=(1, 1), stride=(1, 1), groups=4)
+              (1): BatchNorm2d(384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): GELU(approximate='none')
+            )
+          )
+          (dilated_knn_graph): DenseDilatedKnnGraph(
+            (_dilated): DenseDilated()
+          )
+        )
+        (fc2): Sequential(
+          (0): Conv2d(384, 192, kernel_size=(1, 1), stride=(1, 1))
+          (1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (drop_path): DropPath(drop_prob=0.082)
+      )
+      (1): FFN(
+        (fc1): Sequential(
+          (0): Conv2d(192, 768, kernel_size=(1, 1), stride=(1, 1))
+          (1): BatchNorm2d(768, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (act): GELU(approximate='none')
+        (fc2): Sequential(
+          (0): Conv2d(768, 192, kernel_size=(1, 1), stride=(1, 1))
+          (1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (drop_path): DropPath(drop_prob=0.082)
+      )
+    )
+    (10): Sequential(
+      (0): Grapher(
+        (fc1): Sequential(
+          (0): Conv2d(192, 192, kernel_size=(1, 1), stride=(1, 1))
+          (1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (graph_conv): DyGraphConv2d(
+          (gconv): MRConv2d(
+            (nn): BasicConv(
+              (0): Conv2d(384, 384, kernel_size=(1, 1), stride=(1, 1), groups=4)
+              (1): BatchNorm2d(384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): GELU(approximate='none')
+            )
+          )
+          (dilated_knn_graph): DenseDilatedKnnGraph(
+            (_dilated): DenseDilated()
+          )
+        )
+        (fc2): Sequential(
+          (0): Conv2d(384, 192, kernel_size=(1, 1), stride=(1, 1))
+          (1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (drop_path): DropPath(drop_prob=0.091)
+      )
+      (1): FFN(
+        (fc1): Sequential(
+          (0): Conv2d(192, 768, kernel_size=(1, 1), stride=(1, 1))
+          (1): BatchNorm2d(768, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (act): GELU(approximate='none')
+        (fc2): Sequential(
+          (0): Conv2d(768, 192, kernel_size=(1, 1), stride=(1, 1))
+          (1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (drop_path): DropPath(drop_prob=0.091)
+      )
+    )
+    (11): Sequential(
+      (0): Grapher(
+        (fc1): Sequential(
+          (0): Conv2d(192, 192, kernel_size=(1, 1), stride=(1, 1))
+          (1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (graph_conv): DyGraphConv2d(
+          (gconv): MRConv2d(
+            (nn): BasicConv(
+              (0): Conv2d(384, 384, kernel_size=(1, 1), stride=(1, 1), groups=4)
+              (1): BatchNorm2d(384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): GELU(approximate='none')
+            )
+          )
+          (dilated_knn_graph): DenseDilatedKnnGraph(
+            (_dilated): DenseDilated()
+          )
+        )
+        (fc2): Sequential(
+          (0): Conv2d(384, 192, kernel_size=(1, 1), stride=(1, 1))
+          (1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (drop_path): DropPath(drop_prob=0.100)
+      )
+      (1): FFN(
+        (fc1): Sequential(
+          (0): Conv2d(192, 768, kernel_size=(1, 1), stride=(1, 1))
+          (1): BatchNorm2d(768, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (act): GELU(approximate='none')
+        (fc2): Sequential(
+          (0): Conv2d(768, 192, kernel_size=(1, 1), stride=(1, 1))
+          (1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (drop_path): DropPath(drop_prob=0.100)
+      )
+    )
+  )
+  (prediction): Sequential(
+    (0): Conv2d(192, 1024, kernel_size=(1, 1), stride=(1, 1))
+    (1): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): GELU(approximate='none')
+    (3): Dropout(p=0.0, inplace=False)
+    (4): Conv2d(1024, 100, kernel_size=(1, 1), stride=(1, 1))
+  )
+)
+Using native Torch AMP. Training in mixed precision.
+Scheduled epochs: 12
+created transform
+Compose(
+    RandomResizedCropAndInterpolation(size=(224, 224), scale=(0.08, 1.0), ratio=(0.75, 1.3333), interpolation=bilinear bicubic)
+    RandomHorizontalFlip(p=0.5)
+    RandAugment(n=2, ops=
+	AugmentOp(name=AutoContrast, p=0.5, m=9, mstd=0.5)
+	AugmentOp(name=Equalize, p=0.5, m=9, mstd=0.5)
+	AugmentOp(name=Invert, p=0.5, m=9, mstd=0.5)
+	AugmentOp(name=Rotate, p=0.5, m=9, mstd=0.5)
+	AugmentOp(name=PosterizeIncreasing, p=0.5, m=9, mstd=0.5)
+	AugmentOp(name=SolarizeIncreasing, p=0.5, m=9, mstd=0.5)
+	AugmentOp(name=SolarizeAdd, p=0.5, m=9, mstd=0.5)
+	AugmentOp(name=ColorIncreasing, p=0.5, m=9, mstd=0.5)
+	AugmentOp(name=ContrastIncreasing, p=0.5, m=9, mstd=0.5)
+	AugmentOp(name=BrightnessIncreasing, p=0.5, m=9, mstd=0.5)
+	AugmentOp(name=SharpnessIncreasing, p=0.5, m=9, mstd=0.5)
+	AugmentOp(name=ShearX, p=0.5, m=9, mstd=0.5)
+	AugmentOp(name=ShearY, p=0.5, m=9, mstd=0.5)
+	AugmentOp(name=TranslateXRel, p=0.5, m=9, mstd=0.5)
+	AugmentOp(name=TranslateYRel, p=0.5, m=9, mstd=0.5))
+    <timm.data.transforms.ToNumpy object at 0x7f3d3220db70>
+    slic_transform()
+    subgraphs_transform()
+)
+using repeated_aug
+loader class is <class 'torch.utils.data.dataloader.DataLoader'>
+prefetcher is used
+created transform
+Compose(
+    Resize(size=256, interpolation=bicubic, max_size=None, antialias=warn)
+    CenterCrop(size=(224, 224))
+    <timm.data.transforms.ToNumpy object at 0x7f3d9e41ebc0>
+    slic_transform()
+    subgraphs_transform()
+)
+loader class is <class 'torch.utils.data.dataloader.DataLoader'>
+prefetcher is used
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x7f3da657f640>
+Traceback (most recent call last):
+  File "/usr/itetnas04/data-scratch-01/mateodi/data/no_preprocessing_wandb_conv/pytcu11_clone/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1479, in __del__
+    self._shutdown_workers()
+  File "/usr/itetnas04/data-scratch-01/mateodi/data/no_preprocessing_wandb_conv/pytcu11_clone/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1443, in _shutdown_workers
+    w.join(timeout=_utils.MP_STATUS_CHECK_INTERVAL)
+  File "/usr/itetnas04/data-scratch-01/mateodi/data/no_preprocessing_wandb_conv/pytcu11_clone/lib/python3.10/multiprocessing/process.py", line 149, in join
+    res = self._popen.wait(timeout)
+  File "/usr/itetnas04/data-scratch-01/mateodi/data/no_preprocessing_wandb_conv/pytcu11_clone/lib/python3.10/multiprocessing/popen_fork.py", line 40, in wait
+    if not wait([self.sentinel], timeout):
+  File "/usr/itetnas04/data-scratch-01/mateodi/data/no_preprocessing_wandb_conv/pytcu11_clone/lib/python3.10/multiprocessing/connection.py", line 931, in wait
+    ready = selector.select(timeout)
+  File "/usr/itetnas04/data-scratch-01/mateodi/data/no_preprocessing_wandb_conv/pytcu11_clone/lib/python3.10/selectors.py", line 416, in select
+    fd_event_list = self._selector.poll(timeout)
+KeyboardInterrupt:

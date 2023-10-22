@@ -1,0 +1,173 @@
+2023-06-07 14:43:15,779 INFO    StreamThr :100483 [internal.py:wandb_internal():87] W&B internal server running at pid: 100483, started at: 2023-06-07 14:43:15.778523
+2023-06-07 14:43:15,781 DEBUG   HandlerThread:100483 [handler.py:handle_request():144] handle_request: status
+2023-06-07 14:43:15,798 INFO    WriterThread:100483 [datastore.py:open_for_write():85] open: /usr/itetnas04/data-scratch-01/mateodi/data/no_preprocessing_wandb_conv/mod_vig_pytorch/vig_pytorch/wandb/run-20230607_144315-es3pqbu8/run-es3pqbu8.wandb
+2023-06-07 14:43:15,799 DEBUG   SenderThread:100483 [sender.py:send():336] send: header
+2023-06-07 14:43:16,247 DEBUG   SenderThread:100483 [sender.py:send():336] send: run
+2023-06-07 14:43:17,006 DEBUG   SenderThread:100483 [git.py:repo():40] git repository is invalid
+2023-06-07 14:43:17,697 DEBUG   HandlerThread:100483 [handler.py:handle_request():144] handle_request: check_version
+2023-06-07 14:43:17,700 INFO    SenderThread:100483 [dir_watcher.py:__init__():219] watching files in: /usr/itetnas04/data-scratch-01/mateodi/data/no_preprocessing_wandb_conv/mod_vig_pytorch/vig_pytorch/wandb/run-20230607_144315-es3pqbu8/files
+2023-06-07 14:43:17,700 INFO    SenderThread:100483 [sender.py:_start_run_threads():1078] run started: es3pqbu8 with start time 1686141795.794528
+2023-06-07 14:43:17,700 DEBUG   SenderThread:100483 [sender.py:send_request():363] send_request: summary_record
+2023-06-07 14:43:17,701 INFO    SenderThread:100483 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-06-07 14:43:17,702 DEBUG   SenderThread:100483 [sender.py:send_request():363] send_request: check_version
+2023-06-07 14:43:17,783 DEBUG   HandlerThread:100483 [handler.py:handle_request():144] handle_request: run_start
+2023-06-07 14:43:17,786 DEBUG   HandlerThread:100483 [system_info.py:__init__():31] System info init
+2023-06-07 14:43:17,787 DEBUG   HandlerThread:100483 [system_info.py:__init__():46] System info init done
+2023-06-07 14:43:17,787 INFO    HandlerThread:100483 [system_monitor.py:start():183] Starting system monitor
+2023-06-07 14:43:17,787 INFO    SystemMonitor:100483 [system_monitor.py:_start():147] Starting system asset monitoring threads
+2023-06-07 14:43:17,787 INFO    HandlerThread:100483 [system_monitor.py:probe():204] Collecting system info
+2023-06-07 14:43:17,794 INFO    SystemMonitor:100483 [interfaces.py:start():187] Started cpu monitoring
+2023-06-07 14:43:17,796 INFO    SystemMonitor:100483 [interfaces.py:start():187] Started disk monitoring
+2023-06-07 14:43:17,796 INFO    SystemMonitor:100483 [interfaces.py:start():187] Started gpu monitoring
+2023-06-07 14:43:17,798 INFO    SystemMonitor:100483 [interfaces.py:start():187] Started memory monitoring
+2023-06-07 14:43:17,798 INFO    SystemMonitor:100483 [interfaces.py:start():187] Started network monitoring
+2023-06-07 14:43:17,843 DEBUG   HandlerThread:100483 [system_info.py:probe():195] Probing system
+2023-06-07 14:43:18,704 INFO    Thread-13 :100483 [dir_watcher.py:_on_file_created():278] file/dir created: /usr/itetnas04/data-scratch-01/mateodi/data/no_preprocessing_wandb_conv/mod_vig_pytorch/vig_pytorch/wandb/run-20230607_144315-es3pqbu8/files/wandb-summary.json
+2023-06-07 14:43:18,761 DEBUG   HandlerThread:100483 [git.py:repo():40] git repository is invalid
+2023-06-07 14:43:18,761 DEBUG   HandlerThread:100483 [system_info.py:probe():240] Probing system done
+2023-06-07 14:43:18,761 DEBUG   HandlerThread:100483 [system_monitor.py:probe():213] {'os': 'Linux-4.19.0-24-amd64-x86_64-with-glibc2.28', 'python': '3.10.11', 'heartbeatAt': '2023-06-07T12:43:17.843489', 'startedAt': '2023-06-07T12:43:15.718923', 'docker': None, 'cuda': None, 'args': ('--local-rank=0', '/scratch/mateodi/imagenet-100/', '--model', 'sp_vig', '--sched', 'cosine', '--epochs', '2', '--opt', 'adamw', '-j', '1', '--num-classes', '100', '--warmup-lr', '1e-6', '--mixup', '.8', '--cutmix', '1.0', '--model-ema', '--model-ema-decay', '0.99996', '--aa', 'rand-m9-mstd0.5-inc1', '--color-jitter', '0.4', '--warmup-epochs', '20', '--opt-eps', '1e-8', '--repeated-aug', '--remode', 'pixel', '--reprob', '0.25', '--amp', '--lr', '2e-3', '--weight-decay', '.05', '--drop', '0', '--drop-path', '.1', '-b', '16', '--output', '/itet-stor/mateodi/superpixel_gnns/outputs/'), 'state': 'running', 'program': '/itet-stor/mateodi/net_scratch/no_preprocessing_wandb_conv/mod_vig_pytorch/vig_pytorch/train.py', 'host': 'tikgpu06', 'username': 'mateodi', 'executable': '/itet-stor/mateodi/net_scratch/no_preprocessing_wandb_conv/pytcu11_clone/bin/python', 'cpu_count': 128, 'cpu_count_logical': 128, 'cpu_freq': {'current': 1624.7251953124992, 'min': 1500.0, 'max': 2250.0}, 'cpu_freq_per_core': [{'current': 1499.973, 'min': 1500.0, 'max': 2250.0}, {'current': 1498.561, 'min': 1500.0, 'max': 2250.0}, {'current': 1498.135, 'min': 1500.0, 'max': 2250.0}, {'current': 1498.971, 'min': 1500.0, 'max': 2250.0}, {'current': 3397.138, 'min': 1500.0, 'max': 2250.0}, {'current': 1510.834, 'min': 1500.0, 'max': 2250.0}, {'current': 3392.672, 'min': 1500.0, 'max': 2250.0}, {'current': 3399.155, 'min': 1500.0, 'max': 2250.0}, {'current': 1511.725, 'min': 1500.0, 'max': 2250.0}, {'current': 1509.625, 'min': 1500.0, 'max': 2250.0}, {'current': 3399.065, 'min': 1500.0, 'max': 2250.0}, {'current': 3394.374, 'min': 1500.0, 'max': 2250.0}, {'current': 1499.245, 'min': 1500.0, 'max': 2250.0}, {'current': 1499.685, 'min': 1500.0, 'max': 2250.0}, {'current': 1499.167, 'min': 1500.0, 'max': 2250.0}, {'current': 1498.82, 'min': 1500.0, 'max': 2250.0}, {'current': 1510.485, 'min': 1500.0, 'max': 2250.0}, {'current': 1509.295, 'min': 1500.0, 'max': 2250.0}, {'current': 1699.396, 'min': 1500.0, 'max': 2250.0}, {'current': 3397.243, 'min': 1500.0, 'max': 2250.0}, {'current': 1801.183, 'min': 1500.0, 'max': 2250.0}, {'current': 1499.056, 'min': 1500.0, 'max': 2250.0}, {'current': 1499.236, 'min': 1500.0, 'max': 2250.0}, {'current': 1498.365, 'min': 1500.0, 'max': 2250.0}, {'current': 1498.123, 'min': 1500.0, 'max': 2250.0}, {'current': 1497.965, 'min': 1500.0, 'max': 2250.0}, {'current': 1499.888, 'min': 1500.0, 'max': 2250.0}, {'current': 1496.674, 'min': 1500.0, 'max': 2250.0}, {'current': 1500.051, 'min': 1500.0, 'max': 2250.0}, {'current': 1500.498, 'min': 1500.0, 'max': 2250.0}, {'current': 1497.409, 'min': 1500.0, 'max': 2250.0}, {'current': 1497.685, 'min': 1500.0, 'max': 2250.0}, {'current': 1497.946, 'min': 1500.0, 'max': 2250.0}, {'current': 1500.219, 'min': 1500.0, 'max': 2250.0}, {'current': 1499.918, 'min': 1500.0, 'max': 2250.0}, {'current': 1498.262, 'min': 1500.0, 'max': 2250.0}, {'current': 1498.704, 'min': 1500.0, 'max': 2250.0}, {'current': 1497.251, 'min': 1500.0, 'max': 2250.0}, {'current': 1497.685, 'min': 1500.0, 'max': 2250.0}, {'current': 1498.21, 'min': 1500.0, 'max': 2250.0}, {'current': 1498.959, 'min': 1500.0, 'max': 2250.0}, {'current': 1499.079, 'min': 1500.0, 'max': 2250.0}, {'current': 1497.326, 'min': 1500.0, 'max': 2250.0}, {'current': 1497.542, 'min': 1500.0, 'max': 2250.0}, {'current': 1498.077, 'min': 1500.0, 'max': 2250.0}, {'current': 1499.265, 'min': 1500.0, 'max': 2250.0}, {'current': 1498.175, 'min': 1500.0, 'max': 2250.0}, {'current': 1500.187, 'min': 1500.0, 'max': 2250.0}, {'current': 1508.904, 'min': 1500.0, 'max': 2250.0}, {'current': 3400.053, 'min': 1500.0, 'max': 2250.0}, {'current': 1508.838, 'min': 1500.0, 'max': 2250.0}, {'current': 1509.147, 'min': 1500.0, 'max': 2250.0}, {'current': 1508.893, 'min': 1500.0, 'max': 2250.0}, {'current': 1698.078, 'min': 1500.0, 'max': 2250.0}, {'current': 3400.055, 'min': 1500.0, 'max': 2250.0}, {'current': 3392.754, 'min': 1500.0, 'max': 2250.0}, {'current': 1509.188, 'min': 1500.0, 'max': 2250.0}, {'current': 1509.857, 'min': 1500.0, 'max': 2250.0}, {'current': 1509.773, 'min': 1500.0, 'max': 2250.0}, {'current': 3399.876, 'min': 1500.0, 'max': 2250.0}, {'current': 1509.743, 'min': 1500.0, 'max': 2250.0}, {'current': 1510.422, 'min': 1500.0, 'max': 2250.0}, {'current': 3393.777, 'min': 1500.0, 'max': 2250.0}, {'current': 1509.714, 'min': 1500.0, 'max': 2250.0}, {'current': 1500.37, 'min': 1500.0, 'max': 2250.0}, {'current': 1499.736, 'min': 1500.0, 'max': 2250.0}, {'current': 1499.999, 'min': 1500.0, 'max': 2250.0}, {'current': 1499.041, 'min': 1500.0, 'max': 2250.0}, {'current': 1499.276, 'min': 1500.0, 'max': 2250.0}, {'current': 1498.172, 'min': 1500.0, 'max': 2250.0}, {'current': 1498.833, 'min': 1500.0, 'max': 2250.0}, {'current': 1497.49, 'min': 1500.0, 'max': 2250.0}, {'current': 1498.888, 'min': 1500.0, 'max': 2250.0}, {'current': 1498.736, 'min': 1500.0, 'max': 2250.0}, {'current': 1499.092, 'min': 1500.0, 'max': 2250.0}, {'current': 1498.776, 'min': 1500.0, 'max': 2250.0}, {'current': 1499.054, 'min': 1500.0, 'max': 2250.0}, {'current': 1497.056, 'min': 1500.0, 'max': 2250.0}, {'current': 1499.317, 'min': 1500.0, 'max': 2250.0}, {'current': 1499.751, 'min': 1500.0, 'max': 2250.0}, {'current': 1499.016, 'min': 1500.0, 'max': 2250.0}, {'current': 1499.502, 'min': 1500.0, 'max': 2250.0}, {'current': 1499.631, 'min': 1500.0, 'max': 2250.0}, {'current': 1498.096, 'min': 1500.0, 'max': 2250.0}, {'current': 1499.173, 'min': 1500.0, 'max': 2250.0}, {'current': 1499.336, 'min': 1500.0, 'max': 2250.0}, {'current': 1498.059, 'min': 1500.0, 'max': 2250.0}, {'current': 1498.729, 'min': 1500.0, 'max': 2250.0}, {'current': 1497.874, 'min': 1500.0, 'max': 2250.0}, {'current': 1499.868, 'min': 1500.0, 'max': 2250.0}, {'current': 1499.89, 'min': 1500.0, 'max': 2250.0}, {'current': 1499.026, 'min': 1500.0, 'max': 2250.0}, {'current': 1499.912, 'min': 1500.0, 'max': 2250.0}, {'current': 1499.819, 'min': 1500.0, 'max': 2250.0}, {'current': 1498.844, 'min': 1500.0, 'max': 2250.0}, {'current': 1498.162, 'min': 1500.0, 'max': 2250.0}, {'current': 1499.318, 'min': 1500.0, 'max': 2250.0}, {'current': 1499.014, 'min': 1500.0, 'max': 2250.0}, {'current': 1498.77, 'min': 1500.0, 'max': 2250.0}, {'current': 1499.413, 'min': 1500.0, 'max': 2250.0}, {'current': 1497.634, 'min': 1500.0, 'max': 2250.0}, {'current': 1498.645, 'min': 1500.0, 'max': 2250.0}, {'current': 1497.805, 'min': 1500.0, 'max': 2250.0}, {'current': 1497.233, 'min': 1500.0, 'max': 2250.0}, {'current': 1498.602, 'min': 1500.0, 'max': 2250.0}, {'current': 1498.737, 'min': 1500.0, 'max': 2250.0}, {'current': 1497.339, 'min': 1500.0, 'max': 2250.0}, {'current': 1497.547, 'min': 1500.0, 'max': 2250.0}, {'current': 1499.82, 'min': 1500.0, 'max': 2250.0}, {'current': 1498.416, 'min': 1500.0, 'max': 2250.0}, {'current': 1498.025, 'min': 1500.0, 'max': 2250.0}, {'current': 1498.083, 'min': 1500.0, 'max': 2250.0}, {'current': 1496.828, 'min': 1500.0, 'max': 2250.0}, {'current': 1498.555, 'min': 1500.0, 'max': 2250.0}, {'current': 1499.203, 'min': 1500.0, 'max': 2250.0}, {'current': 1498.348, 'min': 1500.0, 'max': 2250.0}, {'current': 1498.9, 'min': 1500.0, 'max': 2250.0}, {'current': 1498.306, 'min': 1500.0, 'max': 2250.0}, {'current': 1498.759, 'min': 1500.0, 'max': 2250.0}, {'current': 1497.675, 'min': 1500.0, 'max': 2250.0}, {'current': 1498.133, 'min': 1500.0, 'max': 2250.0}, {'current': 1498.666, 'min': 1500.0, 'max': 2250.0}, {'current': 1498.984, 'min': 1500.0, 'max': 2250.0}, {'current': 1498.387, 'min': 1500.0, 'max': 2250.0}, {'current': 1499.263, 'min': 1500.0, 'max': 2250.0}, {'current': 1498.678, 'min': 1500.0, 'max': 2250.0}, {'current': 1497.856, 'min': 1500.0, 'max': 2250.0}, {'current': 1499.138, 'min': 1500.0, 'max': 2250.0}], 'disk': {'total': 18.164710998535156, 'used': 14.721683502197266}, 'gpu': 'NVIDIA GeForce RTX 3090', 'gpu_count': 1, 'gpu_devices': [{'name': 'NVIDIA GeForce RTX 3090', 'memory_total': 25447170048}], 'memory': {'total': 503.73828887939453}}
+2023-06-07 14:43:18,762 INFO    HandlerThread:100483 [system_monitor.py:probe():214] Finished collecting system info
+2023-06-07 14:43:18,762 INFO    HandlerThread:100483 [system_monitor.py:probe():217] Publishing system info
+2023-06-07 14:43:18,762 DEBUG   HandlerThread:100483 [system_info.py:_save_pip():51] Saving list of pip packages installed into the current environment
+2023-06-07 14:43:18,764 DEBUG   HandlerThread:100483 [system_info.py:_save_pip():67] Saving pip packages done
+2023-06-07 14:43:18,765 DEBUG   HandlerThread:100483 [system_info.py:_save_conda():74] Saving list of conda packages installed into the current environment
+2023-06-07 14:43:19,702 INFO    Thread-13 :100483 [dir_watcher.py:_on_file_created():278] file/dir created: /usr/itetnas04/data-scratch-01/mateodi/data/no_preprocessing_wandb_conv/mod_vig_pytorch/vig_pytorch/wandb/run-20230607_144315-es3pqbu8/files/conda-environment.yaml
+2023-06-07 14:43:19,703 INFO    Thread-13 :100483 [dir_watcher.py:_on_file_created():278] file/dir created: /usr/itetnas04/data-scratch-01/mateodi/data/no_preprocessing_wandb_conv/mod_vig_pytorch/vig_pytorch/wandb/run-20230607_144315-es3pqbu8/files/requirements.txt
+2023-06-07 14:43:27,967 DEBUG   HandlerThread:100483 [system_info.py:_save_conda():86] Saving conda packages done
+2023-06-07 14:43:27,969 INFO    HandlerThread:100483 [system_monitor.py:probe():219] Finished publishing system info
+2023-06-07 14:43:28,014 DEBUG   HandlerThread:100483 [handler.py:handle_request():144] handle_request: status_report
+2023-06-07 14:43:28,014 DEBUG   HandlerThread:100483 [handler.py:handle_request():144] handle_request: keepalive
+2023-06-07 14:43:28,014 DEBUG   HandlerThread:100483 [handler.py:handle_request():144] handle_request: status_report
+2023-06-07 14:43:28,015 DEBUG   SenderThread:100483 [sender.py:send():336] send: exit
+2023-06-07 14:43:28,015 INFO    SenderThread:100483 [sender.py:send_exit():559] handling exit code: 255
+2023-06-07 14:43:28,015 INFO    SenderThread:100483 [sender.py:send_exit():561] handling runtime: 10
+2023-06-07 14:43:28,017 INFO    SenderThread:100483 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-06-07 14:43:28,018 INFO    SenderThread:100483 [sender.py:send_exit():567] send defer
+2023-06-07 14:43:28,018 DEBUG   SenderThread:100483 [sender.py:send():336] send: files
+2023-06-07 14:43:28,018 INFO    SenderThread:100483 [sender.py:_save_file():1332] saving file wandb-metadata.json with policy now
+2023-06-07 14:43:28,018 DEBUG   HandlerThread:100483 [handler.py:handle_request():144] handle_request: defer
+2023-06-07 14:43:28,018 INFO    HandlerThread:100483 [handler.py:handle_request_defer():170] handle defer: 0
+2023-06-07 14:43:28,019 DEBUG   SenderThread:100483 [sender.py:send_request():363] send_request: defer
+2023-06-07 14:43:28,019 INFO    SenderThread:100483 [sender.py:send_request_defer():583] handle sender defer: 0
+2023-06-07 14:43:28,019 INFO    SenderThread:100483 [sender.py:transition_state():587] send defer: 1
+2023-06-07 14:43:28,019 DEBUG   HandlerThread:100483 [handler.py:handle_request():144] handle_request: defer
+2023-06-07 14:43:28,019 INFO    HandlerThread:100483 [handler.py:handle_request_defer():170] handle defer: 1
+2023-06-07 14:43:28,019 DEBUG   SenderThread:100483 [sender.py:send_request():363] send_request: defer
+2023-06-07 14:43:28,019 INFO    SenderThread:100483 [sender.py:send_request_defer():583] handle sender defer: 1
+2023-06-07 14:43:28,019 INFO    SenderThread:100483 [sender.py:transition_state():587] send defer: 2
+2023-06-07 14:43:28,020 DEBUG   HandlerThread:100483 [handler.py:handle_request():144] handle_request: defer
+2023-06-07 14:43:28,020 INFO    HandlerThread:100483 [handler.py:handle_request_defer():170] handle defer: 2
+2023-06-07 14:43:28,020 INFO    HandlerThread:100483 [system_monitor.py:finish():193] Stopping system monitor
+2023-06-07 14:43:28,020 DEBUG   SystemMonitor:100483 [system_monitor.py:_start():161] Starting system metrics aggregation loop
+2023-06-07 14:43:28,020 DEBUG   SystemMonitor:100483 [system_monitor.py:_start():168] Finished system metrics aggregation loop
+2023-06-07 14:43:28,020 DEBUG   SystemMonitor:100483 [system_monitor.py:_start():172] Publishing last batch of metrics
+2023-06-07 14:43:28,038 INFO    HandlerThread:100483 [interfaces.py:finish():199] Joined cpu monitor
+2023-06-07 14:43:28,038 INFO    HandlerThread:100483 [interfaces.py:finish():199] Joined disk monitor
+2023-06-07 14:43:28,114 INFO    HandlerThread:100483 [interfaces.py:finish():199] Joined gpu monitor
+2023-06-07 14:43:28,114 INFO    HandlerThread:100483 [interfaces.py:finish():199] Joined memory monitor
+2023-06-07 14:43:28,114 INFO    HandlerThread:100483 [interfaces.py:finish():199] Joined network monitor
+2023-06-07 14:43:28,114 DEBUG   SenderThread:100483 [sender.py:send_request():363] send_request: defer
+2023-06-07 14:43:28,114 INFO    SenderThread:100483 [sender.py:send_request_defer():583] handle sender defer: 2
+2023-06-07 14:43:28,114 INFO    SenderThread:100483 [sender.py:transition_state():587] send defer: 3
+2023-06-07 14:43:28,114 DEBUG   HandlerThread:100483 [handler.py:handle_request():144] handle_request: defer
+2023-06-07 14:43:28,114 INFO    HandlerThread:100483 [handler.py:handle_request_defer():170] handle defer: 3
+2023-06-07 14:43:28,114 DEBUG   SenderThread:100483 [sender.py:send_request():363] send_request: defer
+2023-06-07 14:43:28,114 INFO    SenderThread:100483 [sender.py:send_request_defer():583] handle sender defer: 3
+2023-06-07 14:43:28,114 INFO    SenderThread:100483 [sender.py:transition_state():587] send defer: 4
+2023-06-07 14:43:28,114 DEBUG   HandlerThread:100483 [handler.py:handle_request():144] handle_request: defer
+2023-06-07 14:43:28,114 INFO    HandlerThread:100483 [handler.py:handle_request_defer():170] handle defer: 4
+2023-06-07 14:43:28,114 DEBUG   SenderThread:100483 [sender.py:send_request():363] send_request: defer
+2023-06-07 14:43:28,114 INFO    SenderThread:100483 [sender.py:send_request_defer():583] handle sender defer: 4
+2023-06-07 14:43:28,114 INFO    SenderThread:100483 [sender.py:transition_state():587] send defer: 5
+2023-06-07 14:43:28,115 DEBUG   HandlerThread:100483 [handler.py:handle_request():144] handle_request: defer
+2023-06-07 14:43:28,115 INFO    HandlerThread:100483 [handler.py:handle_request_defer():170] handle defer: 5
+2023-06-07 14:43:28,115 DEBUG   SenderThread:100483 [sender.py:send():336] send: summary
+2023-06-07 14:43:28,117 INFO    SenderThread:100483 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2023-06-07 14:43:28,117 DEBUG   SenderThread:100483 [sender.py:send_request():363] send_request: defer
+2023-06-07 14:43:28,117 INFO    SenderThread:100483 [sender.py:send_request_defer():583] handle sender defer: 5
+2023-06-07 14:43:28,117 INFO    SenderThread:100483 [sender.py:transition_state():587] send defer: 6
+2023-06-07 14:43:28,117 DEBUG   HandlerThread:100483 [handler.py:handle_request():144] handle_request: defer
+2023-06-07 14:43:28,117 INFO    HandlerThread:100483 [handler.py:handle_request_defer():170] handle defer: 6
+2023-06-07 14:43:28,117 DEBUG   SenderThread:100483 [sender.py:send_request():363] send_request: defer
+2023-06-07 14:43:28,117 INFO    SenderThread:100483 [sender.py:send_request_defer():583] handle sender defer: 6
+2023-06-07 14:43:28,117 INFO    SenderThread:100483 [sender.py:transition_state():587] send defer: 7
+2023-06-07 14:43:28,117 DEBUG   HandlerThread:100483 [handler.py:handle_request():144] handle_request: status_report
+2023-06-07 14:43:28,117 DEBUG   HandlerThread:100483 [handler.py:handle_request():144] handle_request: defer
+2023-06-07 14:43:28,117 INFO    HandlerThread:100483 [handler.py:handle_request_defer():170] handle defer: 7
+2023-06-07 14:43:28,117 DEBUG   SenderThread:100483 [sender.py:send_request():363] send_request: defer
+2023-06-07 14:43:28,117 INFO    SenderThread:100483 [sender.py:send_request_defer():583] handle sender defer: 7
+2023-06-07 14:43:28,117 INFO    SenderThread:100483 [sender.py:transition_state():587] send defer: 8
+2023-06-07 14:43:28,117 DEBUG   HandlerThread:100483 [handler.py:handle_request():144] handle_request: defer
+2023-06-07 14:43:28,117 INFO    HandlerThread:100483 [handler.py:handle_request_defer():170] handle defer: 8
+2023-06-07 14:43:28,117 DEBUG   SenderThread:100483 [sender.py:send_request():363] send_request: defer
+2023-06-07 14:43:28,117 INFO    SenderThread:100483 [sender.py:send_request_defer():583] handle sender defer: 8
+2023-06-07 14:43:28,118 INFO    SenderThread:100483 [sender.py:transition_state():587] send defer: 9
+2023-06-07 14:43:28,118 DEBUG   HandlerThread:100483 [handler.py:handle_request():144] handle_request: defer
+2023-06-07 14:43:28,118 INFO    HandlerThread:100483 [handler.py:handle_request_defer():170] handle defer: 9
+2023-06-07 14:43:28,118 DEBUG   SenderThread:100483 [sender.py:send_request():363] send_request: defer
+2023-06-07 14:43:28,118 INFO    SenderThread:100483 [sender.py:send_request_defer():583] handle sender defer: 9
+2023-06-07 14:43:28,118 INFO    SenderThread:100483 [dir_watcher.py:finish():365] shutting down directory watcher
+2023-06-07 14:43:28,284 DEBUG   HandlerThread:100483 [handler.py:handle_request():144] handle_request: poll_exit
+2023-06-07 14:43:28,554 INFO    wandb-upload_0:100483 [upload_job.py:push():138] Uploaded file /tmp/tmpzwnn33ujwandb/53zghyux-wandb-metadata.json
+2023-06-07 14:43:28,705 INFO    SenderThread:100483 [dir_watcher.py:_on_file_modified():295] file/dir modified: /usr/itetnas04/data-scratch-01/mateodi/data/no_preprocessing_wandb_conv/mod_vig_pytorch/vig_pytorch/wandb/run-20230607_144315-es3pqbu8/files/conda-environment.yaml
+2023-06-07 14:43:28,705 INFO    SenderThread:100483 [dir_watcher.py:_on_file_modified():295] file/dir modified: /usr/itetnas04/data-scratch-01/mateodi/data/no_preprocessing_wandb_conv/mod_vig_pytorch/vig_pytorch/wandb/run-20230607_144315-es3pqbu8/files/wandb-summary.json
+2023-06-07 14:43:28,705 INFO    SenderThread:100483 [dir_watcher.py:_on_file_created():278] file/dir created: /usr/itetnas04/data-scratch-01/mateodi/data/no_preprocessing_wandb_conv/mod_vig_pytorch/vig_pytorch/wandb/run-20230607_144315-es3pqbu8/files/wandb-metadata.json
+2023-06-07 14:43:28,706 INFO    SenderThread:100483 [dir_watcher.py:finish():395] scan: /usr/itetnas04/data-scratch-01/mateodi/data/no_preprocessing_wandb_conv/mod_vig_pytorch/vig_pytorch/wandb/run-20230607_144315-es3pqbu8/files
+2023-06-07 14:43:28,706 INFO    SenderThread:100483 [dir_watcher.py:finish():409] scan save: /usr/itetnas04/data-scratch-01/mateodi/data/no_preprocessing_wandb_conv/mod_vig_pytorch/vig_pytorch/wandb/run-20230607_144315-es3pqbu8/files/config.yaml config.yaml
+2023-06-07 14:43:28,706 INFO    SenderThread:100483 [dir_watcher.py:finish():409] scan save: /usr/itetnas04/data-scratch-01/mateodi/data/no_preprocessing_wandb_conv/mod_vig_pytorch/vig_pytorch/wandb/run-20230607_144315-es3pqbu8/files/conda-environment.yaml conda-environment.yaml
+2023-06-07 14:43:28,706 INFO    SenderThread:100483 [dir_watcher.py:finish():409] scan save: /usr/itetnas04/data-scratch-01/mateodi/data/no_preprocessing_wandb_conv/mod_vig_pytorch/vig_pytorch/wandb/run-20230607_144315-es3pqbu8/files/wandb-summary.json wandb-summary.json
+2023-06-07 14:43:28,707 INFO    SenderThread:100483 [dir_watcher.py:finish():409] scan save: /usr/itetnas04/data-scratch-01/mateodi/data/no_preprocessing_wandb_conv/mod_vig_pytorch/vig_pytorch/wandb/run-20230607_144315-es3pqbu8/files/requirements.txt requirements.txt
+2023-06-07 14:43:28,707 INFO    SenderThread:100483 [dir_watcher.py:finish():409] scan save: /usr/itetnas04/data-scratch-01/mateodi/data/no_preprocessing_wandb_conv/mod_vig_pytorch/vig_pytorch/wandb/run-20230607_144315-es3pqbu8/files/wandb-metadata.json wandb-metadata.json
+2023-06-07 14:43:28,707 INFO    SenderThread:100483 [sender.py:transition_state():587] send defer: 10
+2023-06-07 14:43:28,707 DEBUG   SenderThread:100483 [sender.py:send_request():363] send_request: poll_exit
+2023-06-07 14:43:28,707 DEBUG   HandlerThread:100483 [handler.py:handle_request():144] handle_request: defer
+2023-06-07 14:43:28,707 INFO    HandlerThread:100483 [handler.py:handle_request_defer():170] handle defer: 10
+2023-06-07 14:43:28,708 DEBUG   SenderThread:100483 [sender.py:send_request():363] send_request: defer
+2023-06-07 14:43:28,708 INFO    SenderThread:100483 [sender.py:send_request_defer():583] handle sender defer: 10
+2023-06-07 14:43:28,708 INFO    SenderThread:100483 [file_pusher.py:finish():164] shutting down file pusher
+2023-06-07 14:43:29,172 INFO    wandb-upload_0:100483 [upload_job.py:push():138] Uploaded file /usr/itetnas04/data-scratch-01/mateodi/data/no_preprocessing_wandb_conv/mod_vig_pytorch/vig_pytorch/wandb/run-20230607_144315-es3pqbu8/files/config.yaml
+2023-06-07 14:43:29,194 INFO    wandb-upload_2:100483 [upload_job.py:push():138] Uploaded file /usr/itetnas04/data-scratch-01/mateodi/data/no_preprocessing_wandb_conv/mod_vig_pytorch/vig_pytorch/wandb/run-20230607_144315-es3pqbu8/files/wandb-summary.json
+2023-06-07 14:43:29,207 INFO    wandb-upload_3:100483 [upload_job.py:push():138] Uploaded file /usr/itetnas04/data-scratch-01/mateodi/data/no_preprocessing_wandb_conv/mod_vig_pytorch/vig_pytorch/wandb/run-20230607_144315-es3pqbu8/files/requirements.txt
+2023-06-07 14:43:29,211 INFO    wandb-upload_1:100483 [upload_job.py:push():138] Uploaded file /usr/itetnas04/data-scratch-01/mateodi/data/no_preprocessing_wandb_conv/mod_vig_pytorch/vig_pytorch/wandb/run-20230607_144315-es3pqbu8/files/conda-environment.yaml
+2023-06-07 14:43:29,284 DEBUG   HandlerThread:100483 [handler.py:handle_request():144] handle_request: poll_exit
+2023-06-07 14:43:29,285 DEBUG   SenderThread:100483 [sender.py:send_request():363] send_request: poll_exit
+2023-06-07 14:43:29,411 INFO    Thread-12 (_thread_body):100483 [sender.py:transition_state():587] send defer: 11
+2023-06-07 14:43:29,412 DEBUG   HandlerThread:100483 [handler.py:handle_request():144] handle_request: defer
+2023-06-07 14:43:29,412 INFO    HandlerThread:100483 [handler.py:handle_request_defer():170] handle defer: 11
+2023-06-07 14:43:29,412 DEBUG   SenderThread:100483 [sender.py:send_request():363] send_request: defer
+2023-06-07 14:43:29,412 INFO    SenderThread:100483 [sender.py:send_request_defer():583] handle sender defer: 11
+2023-06-07 14:43:29,412 INFO    SenderThread:100483 [file_pusher.py:join():169] waiting for file pusher
+2023-06-07 14:43:29,412 INFO    SenderThread:100483 [sender.py:transition_state():587] send defer: 12
+2023-06-07 14:43:29,412 DEBUG   HandlerThread:100483 [handler.py:handle_request():144] handle_request: defer
+2023-06-07 14:43:29,412 INFO    HandlerThread:100483 [handler.py:handle_request_defer():170] handle defer: 12
+2023-06-07 14:43:29,412 DEBUG   SenderThread:100483 [sender.py:send_request():363] send_request: defer
+2023-06-07 14:43:29,412 INFO    SenderThread:100483 [sender.py:send_request_defer():583] handle sender defer: 12
+2023-06-07 14:43:29,910 INFO    SenderThread:100483 [sender.py:transition_state():587] send defer: 13
+2023-06-07 14:43:29,910 DEBUG   HandlerThread:100483 [handler.py:handle_request():144] handle_request: defer
+2023-06-07 14:43:29,910 INFO    HandlerThread:100483 [handler.py:handle_request_defer():170] handle defer: 13
+2023-06-07 14:43:29,911 DEBUG   SenderThread:100483 [sender.py:send_request():363] send_request: defer
+2023-06-07 14:43:29,911 INFO    SenderThread:100483 [sender.py:send_request_defer():583] handle sender defer: 13
+2023-06-07 14:43:29,911 INFO    SenderThread:100483 [sender.py:transition_state():587] send defer: 14
+2023-06-07 14:43:29,911 DEBUG   HandlerThread:100483 [handler.py:handle_request():144] handle_request: defer
+2023-06-07 14:43:29,911 INFO    HandlerThread:100483 [handler.py:handle_request_defer():170] handle defer: 14
+2023-06-07 14:43:29,911 DEBUG   SenderThread:100483 [sender.py:send():336] send: final
+2023-06-07 14:43:29,911 DEBUG   SenderThread:100483 [sender.py:send():336] send: footer
+2023-06-07 14:43:29,911 DEBUG   SenderThread:100483 [sender.py:send_request():363] send_request: defer
+2023-06-07 14:43:29,912 INFO    SenderThread:100483 [sender.py:send_request_defer():583] handle sender defer: 14
+2023-06-07 14:43:29,913 DEBUG   HandlerThread:100483 [handler.py:handle_request():144] handle_request: poll_exit
+2023-06-07 14:43:29,913 DEBUG   HandlerThread:100483 [handler.py:handle_request():144] handle_request: poll_exit
+2023-06-07 14:43:29,913 DEBUG   HandlerThread:100483 [handler.py:handle_request():144] handle_request: server_info
+2023-06-07 14:43:29,913 DEBUG   HandlerThread:100483 [handler.py:handle_request():144] handle_request: get_summary
+2023-06-07 14:43:29,913 DEBUG   HandlerThread:100483 [handler.py:handle_request():144] handle_request: sampled_history
+2023-06-07 14:43:29,913 DEBUG   SenderThread:100483 [sender.py:send_request():363] send_request: poll_exit
+2023-06-07 14:43:29,914 DEBUG   SenderThread:100483 [sender.py:send_request():363] send_request: poll_exit
+2023-06-07 14:43:29,914 DEBUG   SenderThread:100483 [sender.py:send_request():363] send_request: server_info
+2023-06-07 14:43:30,225 INFO    MainThread:100483 [wandb_run.py:_footer_history_summary_info():3429] rendering history
+2023-06-07 14:43:30,225 INFO    MainThread:100483 [wandb_run.py:_footer_history_summary_info():3461] rendering summary
+2023-06-07 14:43:30,225 INFO    MainThread:100483 [wandb_run.py:_footer_sync_info():3387] logging synced files
+2023-06-07 14:43:30,226 DEBUG   HandlerThread:100483 [handler.py:handle_request():144] handle_request: shutdown
+2023-06-07 14:43:30,226 INFO    HandlerThread:100483 [handler.py:finish():842] shutting down handler
+2023-06-07 14:43:30,914 INFO    WriterThread:100483 [datastore.py:close():298] close: /usr/itetnas04/data-scratch-01/mateodi/data/no_preprocessing_wandb_conv/mod_vig_pytorch/vig_pytorch/wandb/run-20230607_144315-es3pqbu8/run-es3pqbu8.wandb
+2023-06-07 14:43:31,227 INFO    SenderThread:100483 [sender.py:finish():1504] shutting down sender
+2023-06-07 14:43:31,227 INFO    SenderThread:100483 [file_pusher.py:finish():164] shutting down file pusher
+2023-06-07 14:43:31,227 INFO    SenderThread:100483 [file_pusher.py:join():169] waiting for file pusher

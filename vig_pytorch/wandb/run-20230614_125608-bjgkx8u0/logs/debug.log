@@ -1,0 +1,29 @@
+2023-06-14 12:56:08,213 INFO    MainThread:20721 [wandb_setup.py:_flush():76] Configure stats pid to 20721
+2023-06-14 12:56:08,213 INFO    MainThread:20721 [wandb_setup.py:_flush():76] Loading settings from /home/mateodi/.config/wandb/settings
+2023-06-14 12:56:08,213 INFO    MainThread:20721 [wandb_setup.py:_flush():76] Loading settings from /usr/itetnas04/data-scratch-01/mateodi/data/no_preprocessing_wandb_conv/mod_vig_pytorch/vig_pytorch/wandb/settings
+2023-06-14 12:56:08,213 INFO    MainThread:20721 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2023-06-14 12:56:08,213 INFO    MainThread:20721 [wandb_setup.py:_flush():76] Applying setup settings: {'_disable_service': False}
+2023-06-14 12:56:08,213 WARNING MainThread:20721 [wandb_setup.py:_flush():76] Could not save program above cwd: /itet-stor/mateodi/net_scratch/no_preprocessing_wandb_conv/mod_vig_pytorch/vig_pytorch/train.py
+2023-06-14 12:56:08,213 INFO    MainThread:20721 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': None, 'program': '/itet-stor/mateodi/net_scratch/no_preprocessing_wandb_conv/mod_vig_pytorch/vig_pytorch/train.py'}
+2023-06-14 12:56:08,213 INFO    MainThread:20721 [wandb_init.py:_log_setup():506] Logging user logs to /usr/itetnas04/data-scratch-01/mateodi/data/no_preprocessing_wandb_conv/mod_vig_pytorch/vig_pytorch/wandb/run-20230614_125608-bjgkx8u0/logs/debug.log
+2023-06-14 12:56:08,213 INFO    MainThread:20721 [wandb_init.py:_log_setup():507] Logging internal logs to /usr/itetnas04/data-scratch-01/mateodi/data/no_preprocessing_wandb_conv/mod_vig_pytorch/vig_pytorch/wandb/run-20230614_125608-bjgkx8u0/logs/debug-internal.log
+2023-06-14 12:56:08,214 INFO    MainThread:20721 [wandb_init.py:init():546] calling init triggers
+2023-06-14 12:56:08,214 INFO    MainThread:20721 [wandb_init.py:init():552] wandb.init called with sweep_config: {}
+config: {}
+2023-06-14 12:56:08,214 INFO    MainThread:20721 [wandb_init.py:init():602] starting backend
+2023-06-14 12:56:08,214 INFO    MainThread:20721 [wandb_init.py:init():606] setting up manager
+2023-06-14 12:56:08,217 INFO    MainThread:20721 [backend.py:_multiprocessing_setup():106] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2023-06-14 12:56:08,220 INFO    MainThread:20721 [wandb_init.py:init():613] backend started and connected
+2023-06-14 12:56:08,223 INFO    MainThread:20721 [wandb_init.py:init():701] updated telemetry
+2023-06-14 12:56:08,983 INFO    MainThread:20721 [wandb_init.py:init():741] communicating run to backend with 60.0 second timeout
+2023-06-14 12:56:09,895 INFO    MainThread:20721 [wandb_run.py:_on_init():2131] communicating current version
+2023-06-14 12:56:09,971 INFO    MainThread:20721 [wandb_run.py:_on_init():2140] got version response upgrade_message: "wandb version 0.15.4 is available!  To upgrade, please run:\n $ pip install wandb --upgrade"
+
+2023-06-14 12:56:09,971 INFO    MainThread:20721 [wandb_init.py:init():789] starting run threads in backend
+2023-06-14 12:56:13,439 INFO    MainThread:20721 [wandb_run.py:_console_start():2112] atexit reg
+2023-06-14 12:56:13,439 INFO    MainThread:20721 [wandb_run.py:_redirect():1967] redirect: SettingsConsole.WRAP_RAW
+2023-06-14 12:56:13,440 INFO    MainThread:20721 [wandb_run.py:_redirect():2032] Wrapping output streams.
+2023-06-14 12:56:13,440 INFO    MainThread:20721 [wandb_run.py:_redirect():2057] Redirects installed.
+2023-06-14 12:56:13,440 INFO    MainThread:20721 [wandb_init.py:init():831] run started, returning control to user process
+2023-06-14 12:56:16,043 INFO    MainThread:20721 [wandb_watch.py:watch():51] Watching
+2023-06-14 12:56:22,184 WARNING MsgRouterThr:20721 [router.py:message_loop():77] message_loop has been closed
